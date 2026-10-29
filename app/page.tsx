@@ -10,8 +10,8 @@ const projects = [
     n: "01",
     title: "Zinab",
     kind: "VOICE AI · AGRICULTURE",
-    text: "Voice AI for Ethiopian farmers, combining satellite, forecast, and soil data with clear spoken and written guidance in Amharic, Afaan Oromo, and English.",
-    stack: ["Voice AI", "Satellite data", "3 languages"],
+    text: "An AI-powered agricultural information assistant in development, designed to help Ethiopian farmers explore location-specific weather, rainfall, and soil data through a map and voice-based questions.",
+    stack: ["Next.js", "TypeScript", "Voice AI"],
     image: "/zinab.png",
     href: "https://github.com/esubaleww/zinab",
   },
@@ -19,21 +19,22 @@ const projects = [
     n: "02",
     title: "Innovation & Technology Portal",
     kind: "CIVIC TECHNOLOGY · WEB APP",
-    text: "Service management and information portal for the Amhara National Regional State Innovation and Technology Bureau.",
-    stack: ["JavaScript", "Web application"],
+    text: "Collaborated on a full-stack information and service management portal for the Amhara National Regional State Innovation and Technology Bureau, covering program applications, service requests, and staff workflows.",
+    stack: ["JavaScript", "Client–server architecture", "Workflow management"],
     image: "/itsms.png",
     href: "https://github.com/esubaleww/itsms-project",
   },
-
   {
     n: "03",
     title: "ChatApp",
-    kind: "FULL-STACK · COMMUNICATION",
-    text: "A React chat application built around simple, direct communication.",
-    stack: ["JavaScript", "Full-stack"],
+    kind: "FULL-STACK · REAL-TIME COMMUNICATION",
+    text: "A deployed MERN chat application with real-time messaging, a React interface, and a Node.js and Express backend connected to MongoDB.",
+    stack: ["React", "Node.js", "MongoDB"],
     image: "/chatapp.png",
     href: "https://github.com/esubaleww/CHATAPP",
+    demoHref: "https://suchatapp.vercel.app/",
   },
+
   {
     n: "04",
     title: "Church Resources Library",
@@ -331,7 +332,7 @@ export default function Home() {
           <Reveal delay={120}>
             <div className="pt-2">
               <p className="max-w-xl text-lg leading-8">
-                I’m a software engineering student and full-stack javaScript
+                I’m a software engineering student and full-stack JavaScript
                 developer interested in making digital products that feel as
                 considered as they are useful.
               </p>

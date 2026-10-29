@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, ExternalLink, Github } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useLayoutEffect, useRef, useState } from "react";
 
@@ -13,37 +13,34 @@ type Project = {
   stack: string[];
   image: string;
   href: string;
+  demoHref?: string;
 };
 
 export function ProjectScroll({ projects }: { projects: Project[] }) {
   const section = useRef<HTMLElement>(null);
   const rail = useRef<HTMLDivElement>(null);
   const [travel, setTravel] = useState(0);
+
   const { scrollYProgress } = useScroll({
     target: section,
     offset: ["start start", "end end"],
   });
+
   const x = useTransform(scrollYProgress, [0, 1], [0, -travel]);
 
   useLayoutEffect(() => {
     const measure = () => {
       const railElement = rail.current;
-
       if (!railElement) return;
 
       const viewportWidth = document.documentElement.clientWidth;
-      const railWidth = railElement.scrollWidth;
-
-      setTravel(Math.max(0, railWidth - viewportWidth));
+      setTravel(Math.max(0, railElement.scrollWidth - viewportWidth));
     };
 
     measure();
 
     const observer = new ResizeObserver(measure);
-
-    if (rail.current) {
-      observer.observe(rail.current);
-    }
+    if (rail.current) observer.observe(rail.current);
 
     window.addEventListener("resize", measure);
 
@@ -78,17 +75,15 @@ export function ProjectScroll({ projects }: { projects: Project[] }) {
             </p>
           </div>
         </div>
+
         <motion.div
           ref={rail}
           style={{ x }}
           className="flex w-max gap-6 pl-[7vw] pr-[7vw] lg:pl-[max(5rem,calc((100vw-1120px)/2))]"
         >
           {projects.map((p) => (
-            <a
+            <article
               key={p.n}
-              href={p.href}
-              target="_blank"
-              rel="noreferrer"
               className="group w-[82vw] shrink-0 snap-center md:w-[72vw] lg:w-[min(72vw,820px)]"
             >
               <div className="relative h-[34svh] min-h-[180px] max-h-[340px] overflow-hidden bg-[var(--surface)]">
@@ -102,21 +97,24 @@ export function ProjectScroll({ projects }: { projects: Project[] }) {
                 <span className="absolute left-4 top-4 bg-[var(--paper)]/90 px-2 py-1 font-mono text-[9px] text-[var(--ink)]">
                   {p.n} / PROJECT
                 </span>
-                <span className="absolute bottom-4 right-4 grid size-10 place-items-center bg-[var(--accent)] text-[#171b13] transition-transform group-hover:-translate-y-1 group-hover:translate-x-1">
-                  <ArrowUpRight size={18} />
-                </span>
               </div>
+
               <div className="mt-3 flex items-center justify-between font-mono text-[8px] tracking-[.08em] text-[var(--muted)]">
                 <span>{p.kind}</span>
-                <span>{p.n} / 06</span>
+                <span>
+                  {p.n} / {String(projects.length).padStart(2, "0")}
+                </span>
               </div>
-              <h3 className="mt-1 font-display text-lg font-semibold tracking-tight transition-colors group-hover:text-[var(--accent)] md:text-xl">
+
+              <h3 className="mt-1 font-display text-lg font-semibold tracking-tight md:text-xl">
                 {p.title}
               </h3>
+
               <p className="mt-1 line-clamp-2 max-w-xl text-[11px] leading-4 text-[var(--muted)] md:text-xs">
                 {p.text}
               </p>
-              <div className="mt-2 flex gap-2">
+
+              <div className="mt-2 flex flex-wrap gap-2">
                 {p.stack.map((tag) => (
                   <span
                     key={tag}
@@ -126,15 +124,40 @@ export function ProjectScroll({ projects }: { projects: Project[] }) {
                   </span>
                 ))}
               </div>
-            </a>
+
+              <div className="mt-3 flex flex-wrap items-center gap-4">
+                {p.demoHref && (
+                  <a
+                    href={p.demoHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Try the live demo of ${p.title}`}
+                    className="inline-flex items-center gap-2 bg-[var(--accent)] px-3 py-2 font-mono text-[9px] font-bold text-[#171b13] transition-transform hover:-translate-y-0.5"
+                  >
+                    LIVE DEMO <ExternalLink size={12} />
+                  </a>
+                )}
+
+                <a
+                  href={p.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`View source code for ${p.title} on GitHub`}
+                  className="inline-flex items-center gap-2 border border-[var(--line)] px-3 py-2 font-mono text-[9px] text-[var(--ink)] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                >
+                  SOURCE CODE <Github size={12} />
+                </a>
+              </div>
+            </article>
           ))}
         </motion.div>
+
         <div className="mx-auto mt-3 flex w-full max-w-[1120px] items-center justify-between px-[7vw] font-mono text-[8px] text-[var(--muted)] lg:px-20">
           <span>SCROLL TO EXPLORE</span>
           <a
             href="https://github.com/esubaleww?tab=repositories"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="flex items-center gap-2 text-[var(--accent)]"
           >
             MORE ON GITHUB <ArrowRight size={13} />
