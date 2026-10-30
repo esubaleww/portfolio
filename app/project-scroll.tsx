@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowRight, ArrowUpRight, ExternalLink, Github } from "lucide-react";
+import { ArrowRight, ExternalLink, Github } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useLayoutEffect, useRef, useState } from "react";
 
@@ -54,22 +54,21 @@ export function ProjectScroll({ projects }: { projects: Project[] }) {
     <section
       ref={section}
       id="work"
-      style={{ height: `calc(100vh + ${travel}px)` }}
-      className="relative border-t border-[var(--line)]"
+      style={{ height: `calc(100vh + ${travel}px)`, marginBottom: "-10vh" }}
+      className="relative border-t border-(--line)"
     >
       <div className="sticky top-0 flex h-screen flex-col justify-center overflow-hidden py-3">
-        <div className="mx-auto mb-5 w-full max-w-[1120px] px-[7vw] lg:px-20">
+        <div className="mx-auto mb-5 w-full max-w-280 px-[7vw] lg:px-20">
           <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-end">
             <div>
               <p className="flex items-center gap-3 font-mono text-[10px] tracking-[.12em] text-[var(--muted)]">
-                <span className="h-px w-5 bg-[var(--accent)]" />( 01 ) SELECTED
-                WORK
+                <span className="h-px w-5 bg-(--accent)" />( 01 ) SELECTED WORK
               </p>
-              <h2 className="mt-2 font-display text-4xl font-semibold tracking-[-.05em] md:text-6xl">
-                Projects<span className="text-[var(--accent)]">.</span>
+              <h2 className="mt-2 font-display text-4xl font-semibold tracking-tighter md:text-6xl">
+                Projects<span className="text-(--accent)">.</span>
               </h2>
             </div>
-            <p className="max-w-sm text-[11px] leading-4 text-[var(--muted)]">
+            <p className="max-w-sm text-[11px] leading-4 text-(--muted)">
               A selection of things I’ve been building, from community tools to
               voice AI for Ethiopian farmers.
             </p>
@@ -86,7 +85,7 @@ export function ProjectScroll({ projects }: { projects: Project[] }) {
               key={p.n}
               className="group w-[82vw] shrink-0 snap-center md:w-[72vw] lg:w-[min(72vw,820px)]"
             >
-              <div className="relative h-[34svh] min-h-[180px] max-h-[340px] overflow-hidden bg-[var(--surface)]">
+              <div className="relative h-[34svh] min-h-45 max-h-[340px] overflow-hidden bg-[var(--surface)]">
                 <Image
                   src={p.image}
                   alt={`${p.title} preview`}
@@ -110,7 +109,7 @@ export function ProjectScroll({ projects }: { projects: Project[] }) {
                 {p.title}
               </h3>
 
-              <p className="mt-1 line-clamp-2 max-w-xl text-[11px] leading-4 text-[var(--muted)] md:text-xs">
+              <p className="mt-1 line-clamp-4 max-w-2xl text-[11px] leading-4 text-[var(--muted)] md:text-xs md:leading-5">
                 {p.text}
               </p>
 

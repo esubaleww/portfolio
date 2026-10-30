@@ -6,31 +6,31 @@ import { ArrowUpRight } from "lucide-react";
 const jobs = [
   {
     period: "FEB – MAY 2026 · 4 MOS",
-    role: "Full Stack Engineer Intern",
-    company: "ANRS Bureau / ITB · On-site",
-    detail:
-      "Collaborated on ITSMS, a full-stack information and service portal with public information, program applications, service requests, and staff workflows.",
-  },
-  {
-    period: "DEC 2025 – FEB 2026 · 3 MOS",
     role: "Full Stack Developer Intern",
-    company: "Future Interns · Remote",
-    detail:
-      "Built responsive frontend features and connected application interfaces with backend data and APIs.",
+    company: "ANRS Innovation & Technology Bureau (ITB) · On-site",
+    points: [
+      "Designed and built the backend of ITSMS, a MERN-stack portal for bureau information, program applications, technology-service requests, and staff workflows.",
+      "Implemented the REST API, business logic, JWT authentication, and role-based access for public users and staff.",
+      "Worked with the project team on requirements and end-to-end flows; wrote testing and technical documentation.",
+    ],
   },
   {
     period: "NOV – DEC 2025 · 2 MOS",
     role: "Front-End Development Intern",
     company: "SaiKet Systems · Remote",
-    detail:
-      "Completed practical work in semantic HTML, responsive CSS layouts, JavaScript interactions, and small web applications.",
+    points: [
+      "Built a responsive product landing page with semantic HTML, responsive CSS, and JavaScript interactions.",
+      "Practiced component-based UI development and repository-based delivery on small web applications.",
+    ],
   },
   {
     period: "NOV – DEC 2025 · 2 MOS",
     role: "Full Stack Developer Intern",
     company: "Codveda Overseas Solutions · Remote",
-    detail:
-      "Worked with the MERN stack, building REST endpoints, JWT authentication, responsive React interfaces, and API integrations.",
+    points: [
+      "Built REST endpoints with JWT authentication on a MERN-stack backend.",
+      "Connected responsive React interfaces to the API through API integration.",
+    ],
   },
 ];
 
@@ -115,13 +115,14 @@ export function Experience() {
                       {job.company}
                     </p>
 
-                    <p className="mt-3 text-xs leading-5 text-[var(--muted)]">
-                      {job.detail}
-                    </p>
+                    <div className="mt-3 space-y-2 text-xs leading-5 text-[var(--muted)]">
+                      {job.points.map((point) => (
+                        <p key={point}>{point}</p>
+                      ))}
+                    </div>
                   </article>
                 </div>
 
-                {/* Timeline marker */}
                 <span className="relative z-10 col-start-1 row-start-1 mx-auto mt-1.5 size-3 rounded-full border-2 border-[var(--accent)] bg-[var(--surface)] sm:col-start-2" />
               </motion.div>
             );

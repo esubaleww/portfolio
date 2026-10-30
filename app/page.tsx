@@ -8,93 +8,88 @@ import { Reveal } from "./reveal";
 const projects = [
   {
     n: "01",
+    title: "Innovation & Technology Portal",
+    kind: "CIVIC TECHNOLOGY · WEB APP",
+    text: "A MERN-stack portal for the Amhara National Regional State Innovation and Technology Bureau, built during my four-month internship. It handles public information, program applications, technology-service requests, and staff workflows. I designed and built the backend: the REST API, business logic, JWT authentication, and role-based access.",
+    stack: ["React", "Node.js", "Express", "MongoDB", "JWT"],
+    image: "/itsms.png",
+    href: "https://github.com/esubaleww/itsms-project",
+  },
+  {
+    n: "02",
     title: "Zinab",
     kind: "VOICE AI · AGRICULTURE",
-    text: "An AI-powered agricultural information assistant in development, designed to help Ethiopian farmers explore location-specific weather, rainfall, and soil data through a map and voice-based questions.",
+    text: "A voice and text assistant, currently in development, that lets Ethiopian farmers ask about local weather, rainfall, and soil data on a map. It is designed to answer in Amharic, Afaan Oromo, and English.",
     stack: ["Next.js", "TypeScript", "Voice AI"],
     image: "/zinab.png",
     href: "https://github.com/esubaleww/zinab",
   },
   {
-    n: "02",
-    title: "Innovation & Technology Portal",
-    kind: "CIVIC TECHNOLOGY · WEB APP",
-    text: "Collaborated on a full-stack information and service management portal for the Amhara National Regional State Innovation and Technology Bureau, covering program applications, service requests, and staff workflows.",
-    stack: ["JavaScript", "Client–server architecture", "Workflow management"],
-    image: "/itsms.png",
-    href: "https://github.com/esubaleww/itsms-project",
-  },
-  {
     n: "03",
     title: "ChatApp",
     kind: "FULL-STACK · REAL-TIME COMMUNICATION",
-    text: "A deployed MERN chat application with real-time messaging, a React interface, and a Node.js and Express backend connected to MongoDB.",
-    stack: ["React", "Node.js", "MongoDB"],
+    text: "A deployed MERN chat application with user authentication and real-time messaging. The React frontend runs on Vercel, and the Node.js and Express backend, connected to MongoDB, runs on Render.",
+    stack: ["React", "Node.js", "Express", "MongoDB"],
     image: "/chatapp.png",
     href: "https://github.com/esubaleww/CHATAPP",
     demoHref: "https://suchatapp.vercel.app/",
   },
-
   {
     n: "04",
-    title: "Church Resources Library",
-    kind: "COMMUNITY · WEB APP",
-    text: "A resource library for organizing and sharing materials with a church community.",
-    stack: ["HTML", "Web"],
-    image: "/orthodoxResource.png",
-    href: "https://github.com/esubaleww/church_resources_library",
-  },
-  {
-    n: "05",
     title: "E-commerce App",
     kind: "COMMERCE · WEB APP",
-    text: "An online shopping experience exploring the core of product browsing and commerce.",
-    stack: ["JavaScript", "E-commerce"],
+    text: "An online shopping app with product browsing and a Stripe payment checkout flow.",
+    stack: ["JavaScript", "Stripe"],
     image: "/ecommerce.png",
     href: "https://github.com/esubaleww/E-COMMERCE-APP",
   },
+];
 
+const otherWork = [
   {
-    n: "06",
+    title: "Church Resources Library",
+    text: "A web library for organizing and sharing materials with a church community.",
+    stack: "HTML",
+    href: "https://github.com/esubaleww/church_resources_library",
+  },
+  {
     title: "Spam Detection",
-    kind: "MACHINE LEARNING · DATA",
-    text: "A machine learning project exploring the detection of spam messages.",
-    stack: ["Python", "Jupyter"],
-    image: "/spamDetection.jpg",
+    text: "A machine learning project that classifies spam messages.",
+    stack: "Python · Jupyter",
     href: "https://github.com/esubaleww/Spam-Detection-Web-App",
   },
 ];
 
 const skills = [
   {
-    label: "LANGUAGES",
+    label: "STRONGEST",
     values: [
       { name: "JavaScript", icon: "javascript" },
       { name: "TypeScript", icon: "typescript" },
-      { name: "Python", icon: "python" },
-      { name: "Java", icon: "java" },
-      { name: "C++", icon: "cplusplus" },
+      { name: "React", icon: "react" },
+      { name: "Next.js", icon: "nextjs" },
+      { name: "Node.js", icon: "nodejs" },
+      { name: "Express", icon: "express" },
+      { name: "MongoDB", icon: "mongodb" },
       { name: "HTML & CSS", icon: "html5" },
     ],
   },
   {
-    label: "FRAMEWORKS",
+    label: "TOOLS",
     values: [
-      { name: "React", icon: "react" },
-      { name: "Node.js", icon: "nodejs" },
-      { name: "Express", icon: "express" },
-      { name: "Next.js", icon: "nextjs" },
+      { name: "REST APIs", icon: "postman" },
+      { name: "Postman", icon: "postman" },
+      { name: "Git", icon: "git" },
+      { name: "VS Code", icon: "vscode" },
     ],
   },
   {
-    label: "DATA & TOOLS",
+    label: "FAMILIAR WITH",
     values: [
-      { name: "MongoDB", icon: "mongodb" },
-      { name: "REST APIs", icon: "postman" },
-      { name: "VS Code", icon: "vscode" },
-      { name: "Postman", icon: "postman" },
-      { name: "Git", icon: "git" },
+      { name: "Python", icon: "python" },
       { name: "Jupyter", icon: "jupyter" },
+      { name: "Java", icon: "java" },
+      { name: "C++", icon: "cplusplus" },
     ],
   },
 ];
@@ -156,7 +151,9 @@ export default function Home() {
       <section className="mx-auto grid min-h-0 max-w-7xl grid-cols-1 items-center gap-12 px-[7vw] py-20 lg:grid-cols-[1.2fr_.8fr] lg:gap-4 lg:px-20">
         <Reveal>
           <div className="hero-enter relative z-10">
-            <Eyebrow>ETHIOPIA · SOFTWARE ENGINEERING STUDENT</Eyebrow>
+            <Eyebrow>
+              BAHIR DAR, ETHIOPIA · SOFTWARE ENGINEERING STUDENT
+            </Eyebrow>
 
             <h1 className="mt-8 font-display text-[clamp(4rem,10vw,8.6rem)] font-extrabold leading-[.82] tracking-[-.065em]">
               Esubalew<span className="text-(--accent)">.</span>
@@ -170,8 +167,9 @@ export default function Home() {
             </p>
 
             <p className="mt-6 max-w-122.5 text-[14px] leading-7 text-(--muted)">
-              Full-stack developer working across web, mobile, and voice AI.
-              Interested in turning real needs into thoughtful software.
+              Full-stack JavaScript developer working across web and voice AI. I
+              turn real needs into working software, from a government service
+              portal to a voice assistant for farmers.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-5">
@@ -192,21 +190,21 @@ export default function Home() {
 
             <div className="mt-12 grid max-w-130 grid-cols-3 border-t border-(--line) pt-5">
               <div>
-                <strong className="font-display text-3xl">06</strong>
+                <strong className="font-display text-3xl">1st</strong>
                 <p className="mt-1 font-mono text-[9px] tracking-wide text-(--muted)">
-                  FEATURED PROJECTS
+                  OPENAI DEVDAY EXCHANGE HACKATHON
+                </p>
+              </div>
+              <div>
+                <strong className="font-display text-3xl">03</strong>
+                <p className="mt-1 font-mono text-[9px] tracking-wide text-(--muted)">
+                  INTERNSHIPS
                 </p>
               </div>
               <div>
                 <strong className="font-display text-3xl">03</strong>
                 <p className="mt-1 font-mono text-[9px] tracking-wide text-(--muted)">
                   LANGUAGES IN ZINAB
-                </p>
-              </div>
-              <div>
-                <strong className="font-display text-3xl">∞</strong>
-                <p className="mt-1 font-mono text-[9px] tracking-wide text-(--muted)">
-                  THINGS TO LEARN
                 </p>
               </div>
             </div>
@@ -244,6 +242,39 @@ export default function Home() {
       {/* Work */}
       <ProjectScroll projects={projects} />
 
+      {/* Other work */}
+      <section className="border-t border-(--line) px-[7vw] py-16 lg:px-20">
+        <div className="mx-auto max-w-280">
+          <Reveal>
+            <div>
+              <Eyebrow>MORE WORK</Eyebrow>
+              <ul className="mt-6 divide-y divide-(--line) border-y border-(--line)">
+                {otherWork.map((item) => (
+                  <li key={item.title}>
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="group flex flex-col gap-2 py-5 transition-colors hover:text-(--accent) sm:flex-row sm:items-center sm:justify-between sm:gap-8"
+                    >
+                      <span className="font-display text-xl font-semibold">
+                        {item.title}
+                      </span>
+                      <span className="max-w-md flex-1 text-sm text-(--muted)">
+                        {item.text}
+                      </span>
+                      <span className="inline-flex items-center gap-2 font-mono text-[9px] tracking-wide text-(--muted)">
+                        {item.stack} <ArrowUpRight size={13} />
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* Skills */}
       <section
         id="skills"
@@ -261,47 +292,62 @@ export default function Home() {
                 <span className="text-(--accent)">into useful things.</span>
               </h2>
               <p className="mt-5 max-w-xs text-sm leading-6 text-(--muted)">
-                A growing toolkit I use to explore, build, and ship digital
-                experiences.
+                The stack I use every day, and the languages I know well enough
+                to work in.
               </p>
             </div>
           </Reveal>
 
           <Reveal delay={120}>
-            <div className="tool-lanes" aria-label="Languages and tools">
-              {[0, 1].map((lane) => {
-                const items = skills
-                  .flatMap((group) => group.values)
-                  .filter((_, index) => index % 2 === lane);
+            <div>
+              <div className="tool-lanes" aria-label="Languages and tools">
+                {[0, 1].map((lane) => {
+                  const items = skills
+                    .flatMap((group) => group.values)
+                    .filter((_, index) => index % 2 === lane);
 
-                return (
-                  <div
-                    className={`tool-lane ${lane === 0 ? "tool-lane-a" : "tool-lane-b"}`}
-                    key={lane}
-                  >
-                    <div className="tool-track">
-                      {[0, 1, 2, 3].map((copy) => (
-                        <div
-                          className="tool-track-set"
-                          key={copy}
-                          aria-hidden={copy > 0}
-                        >
-                          {items.map(({ name, icon }) => (
-                            <span key={name} className="tool-chip">
-                              <img
-                                src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon}/${icon}-original.svg`}
-                                alt=""
-                                loading="lazy"
-                              />
-                              {name}
-                            </span>
-                          ))}
-                        </div>
-                      ))}
+                  return (
+                    <div
+                      className={`tool-lane ${lane === 0 ? "tool-lane-a" : "tool-lane-b"}`}
+                      key={lane}
+                    >
+                      <div className="tool-track">
+                        {[0, 1, 2, 3].map((copy) => (
+                          <div
+                            className="tool-track-set"
+                            key={copy}
+                            aria-hidden={copy > 0}
+                          >
+                            {items.map(({ name, icon }) => (
+                              <span key={name} className="tool-chip">
+                                <img
+                                  src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon}/${icon}-original.svg`}
+                                  alt=""
+                                  loading="lazy"
+                                />
+                                {name}
+                              </span>
+                            ))}
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
+
+              <p className="mt-6 text-xs leading-6 text-(--muted)">
+                <span className="font-mono text-[9px] tracking-[.12em] text-(--accent)">
+                  DAILY STACK{" "}
+                </span>
+                JavaScript, TypeScript, React, Next.js, Node.js, Express,
+                MongoDB
+                <br />
+                <span className="font-mono text-[9px] tracking-[.12em] text-(--accent)">
+                  FAMILIAR WITH{" "}
+                </span>
+                Python, Java, C++
+              </p>
             </div>
           </Reveal>
         </div>
@@ -332,9 +378,9 @@ export default function Home() {
           <Reveal delay={120}>
             <div className="pt-2">
               <p className="max-w-xl text-lg leading-8">
-                I’m a software engineering student and full-stack JavaScript
-                developer interested in making digital products that feel as
-                considered as they are useful.
+                I’m a fifth-year software engineering student at Bahir Dar
+                University and a full-stack JavaScript developer. I make digital
+                products that feel as considered as they are useful.
               </p>
 
               <p className="mt-5 max-w-xl text-sm leading-7 text-(--muted)">
@@ -345,6 +391,22 @@ export default function Home() {
               </p>
 
               <div className="mt-9 border-t border-(--line) pt-5">
+                <span className="font-mono text-[9px] tracking-[.12em] text-(--accent)">
+                  RECOGNITION
+                </span>
+                <p className="mt-3 text-sm leading-6">
+                  <strong>
+                    First place, OpenAI DevDay Exchange Community Hackathon
+                  </strong>
+                  <span className="text-(--muted)">
+                    {" "}
+                    · Bahir Dar, October 2026. I built the frontend of our
+                    team’s Automated Traffic Management System.
+                  </span>
+                </p>
+              </div>
+
+              <div className="mt-6 border-t border-(--line) pt-5">
                 <span className="font-mono text-[9px] tracking-[.12em] text-(--accent)">
                   WHAT I CARE ABOUT
                 </span>
@@ -377,12 +439,17 @@ export default function Home() {
             </h2>
 
             <div className="mt-10 flex flex-col justify-between gap-7 border-t border-(--line) pt-6 sm:flex-row sm:items-center">
-              <a
-                href="mailto:esuwo2024@gmail.com"
-                className="inline-flex w-fit items-center gap-4 bg-(--accent) px-5 py-4 text-xs font-bold text-[#171b13] transition-transform hover:-translate-y-1"
-              >
-                SAY HELLO <ArrowUpRight size={15} />
-              </a>
+              <div className="flex flex-col gap-3">
+                <a
+                  href="mailto:esuwo2024@gmail.com"
+                  className="inline-flex w-fit items-center gap-4 bg-(--accent) px-5 py-4 text-xs font-bold text-[#171b13] transition-transform hover:-translate-y-1"
+                >
+                  SAY HELLO <ArrowUpRight size={15} />
+                </a>
+                <span className="select-all font-mono text-[11px] text-(--muted)">
+                  esuwo2024@gmail.com
+                </span>
+              </div>
 
               <div className="flex gap-5">
                 {[
